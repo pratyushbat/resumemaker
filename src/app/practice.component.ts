@@ -36,6 +36,23 @@ import { Component } from '@angular/core';
 Created by <a href="javascript:void(0)">https://github.com/andreElrico</a>
 <hr>
 
+<mat-card  fxLayout="column" fxLayoutAlign="center stretch">
+<div fxLayout="row"  fxLayoutGap="20px">
+  <mat-form-field fxFlex="30%"> 
+    <mat-label> First name</mat-label>
+    <input matInput placeholder="FirstName">
+  </mat-form-field>
+  <mat-form-field fxFlex="70%"> 
+    <mat-label> Last name</mat-label>
+    <input matInput placeholder="LastName">
+  </mat-form-field>
+ </div>
+   <mat-form-field>
+    <mat-label> Email</mat-label>
+    <input matInput placeholder="Email">
+  </mat-form-field>
+</mat-card>
+
 <!-- Copyright 2019 Google Inc. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
     can be found in the LICENSE file at http://angular.io/license -->

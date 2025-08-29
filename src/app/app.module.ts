@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { MatGenericSelfMadeComponent } from './buttons.component';
 import { PracticeComponent } from './practice.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PracticeComponent } from './practice.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+        FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
