@@ -67,8 +67,8 @@ export class OnBoardingComponent implements OnInit {
     }
 
     finish() {
-        // this.resumeRepo.updateOnBoarding({onboarding: 200}).subscribe((data:any) => {
-        //   this.router.navigate(['dashboard']);
-        // });
+        this.resumeRepo.updateOnBoarding({onboarding: 200}).subscribe((data:any) => {
+          this.router.navigate(['dashboard']);
+        });
     }
 }

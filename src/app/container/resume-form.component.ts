@@ -39,7 +39,7 @@ export const TEST_TOKENFF=new InjectionToken('test_toenF')
             Enter Your Work Experience
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <!-- <app-employment-history [resumeId]="resume._id" [employmentHistories]="resume.employment_history"></app-employment-history> -->
+        <app-employment-history [resumeId]="resume._id" [employmentHistories]="resume.employment_history"></app-employment-history>
       </mat-expansion-panel>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -48,7 +48,7 @@ export const TEST_TOKENFF=new InjectionToken('test_toenF')
             Describe your hobbies and interest in detail
           </mat-panel-description>
         </mat-expansion-panel-header>
-         <!-- <app-interest [resumeId]="this.resume._id" [interests]="resume.interests"></app-interest>  -->
+         <app-interest [resumeId]="this.resume._id" [interests]="resume.interests"></app-interest>  
       </mat-expansion-panel>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -57,7 +57,7 @@ export const TEST_TOKENFF=new InjectionToken('test_toenF')
             Describe your Skills
           </mat-panel-description>
         </mat-expansion-panel-header>
-         <!-- <app-skills [skills]="resume.skills" [resumeId]="resume._id"></app-skills>  -->
+         <app-skills [skills]="resume.skills" [resumeId]="resume._id"></app-skills>  
       </mat-expansion-panel>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -66,7 +66,7 @@ export const TEST_TOKENFF=new InjectionToken('test_toenF')
             Describe your known Languages
           </mat-panel-description>
         </mat-expansion-panel-header>
-         <!-- <app-language [resumeId]="resume._id" [languages]="resume.languages"></app-language>  -->
+         <app-language [resumeId]="resume._id" [languages]="resume.languages"></app-language>  
       </mat-expansion-panel>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -75,7 +75,7 @@ export const TEST_TOKENFF=new InjectionToken('test_toenF')
             Describe about your Industrial Exposure as an Intern
           </mat-panel-description>
         </mat-expansion-panel-header>
-         <!-- <app-industrial-exposure [resumeId]="resume._id" [industrialExposures]="resume.industrialExposures"></app-industrial-exposure>  -->
+         <app-industrial-exposure [resumeId]="resume._id" [industrialExposures]="resume.industrialExposures"></app-industrial-exposure>  
       </mat-expansion-panel>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -84,7 +84,7 @@ export const TEST_TOKENFF=new InjectionToken('test_toenF')
             Describe about your Awards and achievements
           </mat-panel-description>
         </mat-expansion-panel-header>
-         <!-- <app-award [resumeId]="resume._id" [awards]="resume.award_achivements"></app-award>  -->
+         <app-award [resumeId]="resume._id" [awards]="resume.award_achivements"></app-award>  
       </mat-expansion-panel>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -93,7 +93,7 @@ export const TEST_TOKENFF=new InjectionToken('test_toenF')
             Describe about your Objectives
           </mat-panel-description>
         </mat-expansion-panel-header>
-         <!-- <app-objective [resumeId]="resume._id" [objectives]="resume.objectives"></app-objective>  -->
+         <app-objective [resumeId]="resume._id" [objectives]="resume.objectives"></app-objective>  
       </mat-expansion-panel>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -102,7 +102,7 @@ export const TEST_TOKENFF=new InjectionToken('test_toenF')
             Describe about your Reference
           </mat-panel-description>
         </mat-expansion-panel-header>
-         <!-- <app-reference [resumeId]="resume._id" [references]="resume.refrences"></app-reference>  -->
+         <app-reference [resumeId]="resume._id" [references]="resume.refrences"></app-reference>  
       </mat-expansion-panel>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -111,7 +111,7 @@ export const TEST_TOKENFF=new InjectionToken('test_toenF')
             Add your Project Details
           </mat-panel-description>
         </mat-expansion-panel-header>
-         <!-- <app-project-details [resumeId]="resume._id" [projectDetails]="resume.projectDetails"></app-project-details>  -->
+         <app-project-details [resumeId]="resume._id" [projectDetails]="resume.projectDetails"></app-project-details>  
       </mat-expansion-panel>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -120,7 +120,7 @@ export const TEST_TOKENFF=new InjectionToken('test_toenF')
             Add your Strengths
           </mat-panel-description>
         </mat-expansion-panel-header>
-         <!-- <app-strength [resumeId]="resume._id" [strength]="resume.strengths"></app-strength>  -->
+         <app-strength [resumeId]="resume._id" [strength]="resume.strengths"></app-strength>  
       </mat-expansion-panel>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -129,7 +129,7 @@ export const TEST_TOKENFF=new InjectionToken('test_toenF')
             Add your Weakness
           </mat-panel-description>
         </mat-expansion-panel-header>
-         <!-- <app-weakness [resumeId]="resume._id" [weaknesses]="resume.weakness"></app-weakness>  -->
+         <app-weakness [resumeId]="resume._id" [weaknesses]="resume.weakness"></app-weakness>  
       </mat-expansion-panel>
     </mat-accordion>
      <mat-spinner *ngIf="this.loading" color="accent" diameter="40"></mat-spinner> 
