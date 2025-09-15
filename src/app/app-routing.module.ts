@@ -12,10 +12,16 @@ import { AnonGuard } from './auth-guards/anon-guard.component';
 import { OnBoardingComponent } from './container/on-boarding/onboarding.component';
 import { VerificationInComplete } from './auth-guards/verification-incompleted';
 import { VerificationComplete } from './auth-guards/verification-completed';
-import { DashboardComponent } from './container/dashboard.component';
+import { DashboardComponent } from './layout/dashboard.component';
 import { OnBoardingComplete } from './auth-guards/onboarding-complete';
 import { OnBoardingIncomplete } from './auth-guards/onboarding-in-complete';
 import { OnBoardingIntroComponent } from './container/on-boarding/on-boarding-intro.component';
+import { ResumeComponent } from './dashboard/resume.component';
+import { SettingComponent } from './dashboard/setting.component';
+import { ResumeFormComponent } from './container/resume-form.component';
+import { UploadComponent } from './container/on-boarding/tabs/upload.component';
+import { LogoutComponent } from './components/logout.component';
+import { NotFoundComponent } from './container/not-found.component';
 
 // const routes: Routes = [
 //   {path:'',component:LoginComponent , canActivate: [AnonGuard],},
@@ -58,6 +64,25 @@ const routes: Routes = [
   },
 
   { path: 'password/reset/:code', component: PasswordResetComponent },
+    {
+    path: '',
+    children: [{
+      path: 'dashboard', component: DashboardComponent,
+      children: [{path: 'resume', component: ResumeComponent},
+        {path: 'settings', component: SettingComponent},
+        // {path: 'resume/template/:id', component: TemplatesComponent},
+        // {path: 'resume/template/:id/:templateId', component: SingleTemplateComponent},
+        // {path: 'resume/preview/:id', component: SingleResumeComponent},
+        {
+          path: 'resume/edit/:id', component: ResumeFormComponent
+        },
+        {path: 'resume/edit/profile/:id', component: UploadComponent}]
+    }],
+    canActivate: [AuthGuard, VerificationComplete, OnBoardingComplete]
+  },
+  {path: 'logout', component: LogoutComponent},
+  {path: '**', component: NotFoundComponent}
+  
   // { path: 'mat-button', component: MatGenericSelfMadeComponent },
   // { path: 'practice', component: PracticeComponent },
 ];

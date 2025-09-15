@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../services/api.service';
-import {  Observable } from 'rxjs';
+import {  Observable, of } from 'rxjs';
 
 import { Resume } from '../models/resume';
 import { map } from 'rxjs/operators';
@@ -38,9 +38,7 @@ import { map } from 'rxjs/operators';
 
 @Injectable({providedIn:'root'})
 export class ResumeRepository {
-  getResumeById(id: any): any {
-    throw new Error('Method not implemented.');
-  }
+  
   constructor(private apiService: ApiService) {
   }
 
@@ -66,19 +64,21 @@ export class ResumeRepository {
   return  this.apiService.fetchAllResumes();
   }
 
-  // getResumeById(id, force = false) {
-  //   const resume$ = this.store.select((state: any) => {
-  //     return getResumeById(state, id);
-  //   });
-  //   resume$.pipe(take(1)).subscribe(data => {
-  //     if (!data || force) {
-  //       this.apiService.getResumeById(id).subscribe(res => {
-  //         this.store.dispatch(new AddResumeAction(res));
-  //       });
-  //     }
-  //   });
-  //   return resume$;
-  // }
+  getResumeById(id:any, force = false) {
+    return of(1);
+
+    // const resume$ = this.store.select((state: any) => {
+    //   return getResumeById(state, id);
+    // });
+    // resume$.pipe(take(1)).subscribe(data => {
+    //   if (!data || force) {
+    //     this.apiService.getResumeById(id).subscribe(res => {
+    //       this.store.dispatch(new AddResumeAction(res));
+    //     });
+    //   }
+    // });
+    // return resume$;
+  }
 
   saveResume(data:any): Observable<any> {
     return this.apiService.saveResume(data).pipe(map((resume) => {
@@ -87,17 +87,19 @@ export class ResumeRepository {
     }));
   }
 
-  // editResume(data:any, resumeId) {
-  //   return this.apiService.editResume(data, resumeId).pipe(map((resume) => {
-  //     this.store.dispatch(new UpdateResumeAction(resume));
-  //   }));
-  // }
+  editResume(data:any, resumeId:any) {
+    return of(1);
+    // return this.apiService.editResume(data, resumeId).pipe(map((resume) => {
+    //   this.store.dispatch(new UpdateResumeAction(resume));
+    // }));
+  }
 
-  // deleteResume(resumeId) {
-  //   return this.apiService.deleteResume(resumeId).pipe(map((resume) => {
-  //     this.store.dispatch(new DeleteResumeAction(resumeId));
-  //   }));
-  // }
+  deleteResume(resumeId:any) {
+    return of(1);
+    // return this.apiService.deleteResume(resumeId).pipe(map((resume) => {
+    //   this.store.dispatch(new DeleteResumeAction(resumeId));
+    // }));
+  }
 
   saveOrUpdateImage(image: File, resumeId: string) {
     return this.apiService.saveOrUpdateImage(image, resumeId).pipe(map((resume) => {
@@ -152,11 +154,12 @@ export class ResumeRepository {
     }));
   }
 
-  // updateViews(data: { views: number }, id: string) {
-  //   return this.apiService.updateViewsCount(data, id).pipe(map(res => {
-  //     this.store.dispatch(new UpdateResumeAction(res));
-  //   }));
-  // }
+  updateViews(data: { views: number }, id: string) {
+    return of(1);
+    // return this.apiService.updateViewsCount(data, id).pipe(map(res => {
+    //   this.store.dispatch(new UpdateResumeAction(res));
+    // }));
+  }
 
   addEducation(data:any, resumeId: string) {
     return this.apiService.addEducation(data, resumeId).pipe(map((res) => {

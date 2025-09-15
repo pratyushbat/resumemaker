@@ -74,6 +74,15 @@ import { WeaknessCardComponent } from './components/resume-form/resume-card/weak
 import { WeaknessFormComponent } from './components/resume-form/resume-dialogues/weakness-form.component';
 import { WeaknessComponent } from './components/resume-form/weakness.component';
 import { WeaknessListComponent } from './components/resume-form/resume-list/weakness-list.component';
+import { HeaderComponent } from './layout/header.component';
+import { DashboardComponent } from './layout/dashboard.component';
+import { SettingComponent } from './dashboard/setting.component';
+import { ResumeComponent } from './dashboard/resume.component';
+import { AddOrEditResumeComponent } from './components/dialogues/add-or-edit-resume.component';
+import { ResumeCardComponent } from './components/resume-card.component';
+import { ProfileSettingsComponent } from './components/profile-settings.component';
+import { PasswordComponent } from './components/password.component';
+import { NotFoundComponent } from './container/not-found.component';
 
 @NgModule({
   declarations: [
@@ -154,9 +163,17 @@ import { WeaknessListComponent } from './components/resume-form/resume-list/weak
     WeaknessCardComponent,
     WeaknessFormComponent,
     WeaknessComponent,
-    WeaknessListComponent
+    WeaknessListComponent,
 
-
+    HeaderComponent,
+    DashboardComponent,
+    SettingComponent,
+    ResumeComponent,
+    AddOrEditResumeComponent,
+    ResumeCardComponent,
+    ProfileSettingsComponent,
+    PasswordComponent,
+    NotFoundComponent
 
     ],
   imports: [

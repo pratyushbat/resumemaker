@@ -1,6 +1,6 @@
 
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { ApiService } from '../services/api.service';
 import { User } from '../models/user';
 import { isPlatformBrowser } from '@angular/common';
@@ -38,5 +38,16 @@ export class AuthRepository {
     // });
     // return user$;
     return this.apiService.fetchMe();
+  }
+
+    updateProfile(data:any) {
+    const userProfile = {...data, ...{job_category: 'abc', experience_level: 'ads'}};
+    return this.apiService.updateUserProfile(userProfile)
+      .pipe(map((res) => {
+        // this.store.dispatch(new UserUpdateAction(res));
+      }));
+  }
+    updatePassword(data:any) {
+    return this.apiService.updatePassword(data);
   }
 }

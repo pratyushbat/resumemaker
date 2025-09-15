@@ -7,9 +7,10 @@ import { User, UserRes } from '../models/user';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: '    <app-header></app-header> app-dashboard',
+  selector: 'app-dashboard',
   template: `
-    dashboard begins
+    <app-header></app-header>
+    <router-outlet></router-outlet>
 `,
   styles: [` `]
 })

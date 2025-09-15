@@ -36,6 +36,14 @@ export class ApiService {
     }));
   }
   
+  updateUserProfile(data:any) {
+    return this.httpService.patch('/user/update/profile', data);
+  }
+
+  updatePassword(data:any) {
+    return this.httpService.patch('/user/update/password', data);
+  }
+
   signUpUser(body:{
     email:string,password:string,confirm_password:string,
     name:string,job_category:string ,experience_level:string}): Observable<User> {
