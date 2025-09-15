@@ -19,7 +19,7 @@ export const TEST_TOKENFF=new InjectionToken('test_toenF')
             Enter your Contact Details
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <!-- <app-contact-details [resumeId]="resume._id" [contactDetails]="resume.contact_details"></app-contact-details> -->
+        <app-contact-details [resumeId]="resume._id" [contactDetails]="resume.contact_details"></app-contact-details>
       </mat-expansion-panel>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -30,7 +30,7 @@ export const TEST_TOKENFF=new InjectionToken('test_toenF')
             Enter your Qualification
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <!-- <app-education [resumeId]="resume._id" [educations]="resume.education"></app-education> -->
+        <app-education [resumeId]="resume._id" [educations]="resume.education"></app-education>
       </mat-expansion-panel>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
