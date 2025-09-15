@@ -52,10 +52,7 @@ import { AuthRepository } from '../repository/auth-repository';
     height: 24rem;
     width: 25rem;
 }
-.overlay {
-      width: 100%;
-      height: 100%;
-    }
+
 
 
 

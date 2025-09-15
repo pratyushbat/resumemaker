@@ -18,9 +18,30 @@ import { HttpService } from './services/http.service';
 import { ForgotPasswordComponent } from './container/forgot-password.component';
 import { VerificationComponent } from './container/verification.component';
 import { OnBoardingComponent } from './container/on-boarding/onboarding.component';
+import { ResumeFormComponent, TEST_TOKEN } from './container/resume-form.component';
+import { ResumeNameComponent } from './container/on-boarding/resume-name.component';
+import { UploadComponent } from './container/on-boarding/tabs/upload.component';
+import { ImportYoutubeComponent } from './container/on-boarding/tabs/import-youtube.component';
+import { UploadFromDiskComponent } from './container/on-boarding/tabs/upload-from-disk.component';
+import { UploadImageComponent } from './container/on-boarding/tabs/upload-image.component';
 
 @NgModule({
-  declarations: [AppComponent, MatGenericSelfMadeComponent, PracticeComponent,LoginComponent,SignupComponent,ForgotPasswordComponent,VerificationComponent,OnBoardingComponent],
+  declarations: [
+    AppComponent, 
+    MatGenericSelfMadeComponent,
+     PracticeComponent,
+     LoginComponent,
+     SignupComponent,
+     ForgotPasswordComponent,
+     VerificationComponent,
+     OnBoardingComponent,
+     ResumeFormComponent,
+     ResumeNameComponent,
+     UploadComponent,
+     UploadImageComponent,
+     UploadFromDiskComponent,
+     ImportYoutubeComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,7 +52,7 @@ import { OnBoardingComponent } from './container/on-boarding/onboarding.componen
     FlexLayoutModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ { provide: TEST_TOKEN, useFactory: () => 'HELLO FACTORY TEST' },],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

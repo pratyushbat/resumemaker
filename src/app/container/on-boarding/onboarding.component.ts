@@ -13,15 +13,15 @@ import { ResumeRepository } from 'src/app/repository/resume-repository';
       <mat-step>
         <ng-template matStepLabel>Name your Resume</ng-template>
         <p>Name your Resume</p>
-        <!-- <app-resume-name [isCompleted]="isFirstStepCompleted"></app-resume-name> -->
+        <app-resume-name [isCompleted]="isFirstStepCompleted"></app-resume-name>
       </mat-step>
       <mat-step *ngIf="this.isFirstStepCompleted" optional>
         <ng-template matStepLabel>Upload Video & Image</ng-template>      
-        <!-- <app-upload></app-upload> -->
+        <app-upload></app-upload>
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>Resume Form</ng-template>
-        <!-- <app-resume-form></app-resume-form> -->
+        <app-resume-form></app-resume-form>
         <div fxLayout="column" fxLayoutAlign="center center" fxFlex="100%">
           <button (click)="finish()" style="margin-top: 1rem" mat-raised-button color="accent">Finish</button>
         </div>

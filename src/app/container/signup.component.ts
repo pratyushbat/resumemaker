@@ -61,10 +61,7 @@ import { ApiService } from '../services/api.service';
     height: 47rem;
     width: 35rem;
 }
-.overlay {
-      width: 100%;
-      height: 100%;
-    }
+
         `]
 })
 export class SignupComponent implements OnInit {

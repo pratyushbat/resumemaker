@@ -194,10 +194,7 @@ Created by <a href="javascript:void(0)">https://github.com/andreElrico</a>
   `,
   styles: [
     `
-      .overlay {
-        width: 100%;
-        height: 100%;
-      }
+
       mat-card {
         width: 35rem;
         height: 33rem;
