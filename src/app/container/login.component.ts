@@ -120,10 +120,10 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login() {
-    // this._apiService.getUsers();
+
     this.loading = true;
-    const login$ = this._apiService.loginAndSetToken(this.loginForm.value);
-    login$.subscribe(
+   
+    this._apiService.loginAndSetToken(this.loginForm.value).subscribe(
       (data: any) => {
         this.loading = false;
         this.user = data.user;

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -83,6 +83,9 @@ import { ResumeCardComponent } from './components/resume-card.component';
 import { ProfileSettingsComponent } from './components/profile-settings.component';
 import { PasswordComponent } from './components/password.component';
 import { NotFoundComponent } from './container/not-found.component';
+import {StoreModule} from '@ngrx/store';
+import { rootReducer } from './reducers';
+
 
 @NgModule({
   declarations: [
@@ -178,15 +181,18 @@ import { NotFoundComponent } from './container/not-found.component';
     ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MaterialModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot(rootReducer), 
   ],
-  providers: [ { provide: TEST_TOKEN, useFactory: () => 'HELLO FACTORY TEST' },],
+  providers: [ 
+
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
