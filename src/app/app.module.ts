@@ -87,6 +87,21 @@ import {StoreModule} from '@ngrx/store';
 import { rootReducer } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SingleResumeComponent } from './container/single-resume.component';
+import { TemplateWeaknessCardComponent } from './components/resume-template/template-cards/template-weakness-card.component';
+import { TemplateStrengthCardComponent } from './components/resume-template/template-cards/template-strength-card.component';
+import { TemplateSkillCardComponent } from './components/resume-template/template-cards/template-skill-card.component';
+import { TemplateReferenceComponent } from './components/resume-template/template-cards/template-reference.component';
+import { TemplateProjectDetailComponent } from './components/resume-template/template-cards/template-project-detail.component';
+import { TemplateObjectiveComponent } from './components/resume-template/template-cards/template-objective.component';
+import { TemplateInterestComponent } from './components/resume-template/template-cards/template-interest.component';
+import { TemplateLanguageCardComponent } from './components/resume-template/template-cards/template-language-card.component';
+import { TemplateIndustrialExposureComponent } from './components/resume-template/template-cards/template-industrial-exposure.component';
+import { TemplateEmploymentHistoryComponent } from './components/resume-template/template-cards/template-employment-history.component';
+import { TemplateEducationComponent } from './components/resume-template/template-cards/template-education.component';
+import { TemplateAwardsComponent } from './components/resume-template/template-cards/template-awards.component';
+import { TemplateContactDetailComponent } from './components/resume-template/template-contact-detail.component';
+import { TemplateDetailsComponent } from './components/resume-template/template-details.component';
+import { TemplateButtonsComponent } from './components/resume-template/template-buttons.component';
 
 
 @NgModule({
@@ -179,7 +194,22 @@ import { SingleResumeComponent } from './container/single-resume.component';
     ProfileSettingsComponent,
     PasswordComponent,
     NotFoundComponent,
-    SingleResumeComponent
+    SingleResumeComponent,
+    TemplateDetailsComponent,
+    TemplateButtonsComponent,
+    TemplateContactDetailComponent,
+    TemplateAwardsComponent,
+    TemplateEducationComponent,
+    TemplateEmploymentHistoryComponent,
+    TemplateIndustrialExposureComponent,
+    TemplateInterestComponent,
+    TemplateLanguageCardComponent,
+    TemplateObjectiveComponent,
+    TemplateProjectDetailComponent,
+    TemplateReferenceComponent,
+    TemplateSkillCardComponent,
+    TemplateStrengthCardComponent,
+    TemplateWeaknessCardComponent
 
     ],
   imports: [

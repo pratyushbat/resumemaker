@@ -6,7 +6,7 @@ import { User } from '../models/user';
 import { isPlatformBrowser } from '@angular/common';
 import { AuthUtils } from '../utility/auth-utils';
 import { getUser, userLoggedIn, userLoggingIn } from '../reducers';
-import { LoginRequestAction, LoginSuccessAction, UserProfileRequestAction, UserProfileSuccessAction } from '../actions/user-actions';
+import { LoginRequestAction, LoginSuccessAction, LogoutAction, UserProfileRequestAction, UserProfileSuccessAction, UserUpdateAction } from '../actions/user-actions';
 import { Store } from '@ngrx/store';
 
 @Injectable({providedIn:'root'})
@@ -58,14 +58,14 @@ export class AuthRepository {
     if (isPlatformBrowser(this.platformId)) {
       AuthUtils.removeAuthToken();
     }
-    // this.store.dispatch(new LogoutAction());
+    this.store.dispatch(new LogoutAction());
   }
 
   updateProfile(data) {
     const userProfile = {...data, ...{job_category: 'abc', experience_level: 'ads'}};
     return this.apiService.updateUserProfile(userProfile)
       .pipe(map((res) => {
-        // this.store.dispatch(new UserUpdateAction(res));
+        this.store.dispatch(new UserUpdateAction(res));
       }));
   }
 
