@@ -85,6 +85,7 @@ import { PasswordComponent } from './components/password.component';
 import { NotFoundComponent } from './container/not-found.component';
 import {StoreModule} from '@ngrx/store';
 import { rootReducer } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 @NgModule({
@@ -189,6 +190,10 @@ import { rootReducer } from './reducers';
     FlexLayoutModule,
     HttpClientModule,
     StoreModule.forRoot(rootReducer), 
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: false, // Restrict extension to log-only mode in production
+    }),
   ],
   providers: [ 
 

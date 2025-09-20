@@ -68,21 +68,21 @@ export class ApiService {
     return this.httpService.get('/resume/all');
   }
 
-  // getResumeById(id:any): Observable<Resume> {
-  //   return this.httpService.get('/resume/' + id);
-  // }
+  getResumeById(id:any): Observable<Resume> {
+    return this.httpService.get('/resume/' + id);
+  }
 
   saveResume(data: { name: string }) {
     return this.httpService.post('/resume/add/resume', data);
   }
 
-  // editResume(data: { name: string }, resumeId: string) {
-  //   return this.httpService.patch('/resume/update/resume/' + resumeId, data);
-  // }
+  editResume(data: { name: string }, resumeId: string) {
+    return this.httpService.patch('/resume/update/resume/' + resumeId, data);
+  }
 
-  // deleteResume(resumeId: string) {
-  //   return this.httpService.delete('/resume/delete/resume/' + resumeId);
-  // }
+  deleteResume(resumeId: string) {
+    return this.httpService.delete('/resume/delete/resume/' + resumeId);
+  }
   saveOrUpdateImage(image: File, resumeId: string): Observable<Resume> {
     const formData = new FormData();
     formData.append('profile_image', image);

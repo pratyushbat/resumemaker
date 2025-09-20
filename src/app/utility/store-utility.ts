@@ -3,13 +3,13 @@ export class StoreUtility {
   // entities: {id:{}} -> normalized format
   static normalize(entityArray: Entity[]) {
     return entityArray.reduce((previousValue, currentValue) => {
-      return {...previousValue, ...{[currentValue.id]: currentValue}};
+      return {...previousValue, ...{[currentValue._id]: currentValue}};
     }, {});
   }
 
   // {dsdsd:{id:dsdsd,name:"dasds"}}; -> entities
   // [{id:dsdsd,name:"dasds"}];
-  static unNormalized(entities: { [id: number]: any }) {
+  static unNormalized(entities: { [_id: number]: any }) {
     if (!entities) {
       return [];
     } else {
@@ -22,13 +22,13 @@ export class StoreUtility {
     return ids.filter((elem, index, self) => index === self.indexOf(elem));
   }
 
-  static removeKey(entities: { [id: number]: any }, id: any) {
+  static removeKey(entities: { [_id: number]: any }, _id: any) {
     const newObj = {...entities};
-    delete newObj[id];
+    delete newObj[_id];
     return newObj;
   }
 }
 
 interface Entity {
-  id: any;
+  _id: any;
 }

@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { AlertService } from '../services/alert.service';
 import { Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
+import { AuthRepository } from '../repository/auth-repository';
 
 @Component({
     selector: 'app-signup',
@@ -69,7 +70,7 @@ export class SignupComponent implements OnInit {
     signUpForm: FormGroup;
     loading: boolean = false
     user!: any;
-    constructor(private apiService: ApiService, private alertService: AlertService, private router: Router) {
+    constructor(private authRepo: AuthRepository, private alertService: AlertService, private router: Router) {
         this.signUpForm = new FormGroup({
             email: new FormControl(null, [Validators.required, Validators.email]),
             password: new FormControl(null, [Validators.required, Validators.maxLength(12), Validators.minLength(8)]),
@@ -85,7 +86,7 @@ export class SignupComponent implements OnInit {
 
     signup() {
         this.loading = true;
-        this.apiService.signUpUser(this.signUpForm.value).subscribe((data:any) => {
+        this.authRepo.signup(this.signUpForm.value).subscribe((data:any) => {
             this.loading = false;
             console.log(data);
             this.alertService.success('Signup Successful.');

@@ -1,13 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-// import { AlertService } from '../services/alert.service';
-// import { ApiService } from '../services/api.service';
-import { HttpClient } from '@angular/common/http';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-// import { User, UserRes } from '../models/user';
 import { Router } from '@angular/router';
 
 import { AlertService } from '../services/alert.service';
-import { ApiService } from '../services/api.service';
+
+import { filter, takeWhile } from 'rxjs';
+import { AuthRepository } from '../repository/auth-repository';
 
 @Component({
   selector: 'app-login',
@@ -103,42 +101,30 @@ export class LoginComponent implements OnInit {
 
   loading: boolean = false;
   user!: any;
-  // user!: User;
+  isAlive = true;
+  
+  constructor(private authRepo: AuthRepository, private alertService: AlertService, private router: Router) {
 
-  // constructor(private apiService: ApiService, private alertService: AlertService, private router: Router) {
-  //     this.loginForm = new FormGroup({
-  //         email: new FormControl(null, [Validators.required, Validators.email]),
-  //         password: new FormControl(null, [Validators.required, Validators.maxLength(12), Validators.minLength(8)]),
-  //     })
-  // }
-  constructor(
-    private _apiService: ApiService,
-    private router: Router,
-    private alertService: AlertService
-  ) {}
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
+
+
 
   login() {
-
     this.loading = true;
-   
-    this._apiService.loginAndSetToken(this.loginForm.value).subscribe(
-      (data: any) => {
+    const request$ = this.authRepo.login(this.loginForm.value);
+    request$.pipe(takeWhile(() => this.isAlive),
+      filter(res => !!res)).subscribe((data) => {
         this.loading = false;
-        this.user = data.user;
-        console.log(this.user);
-        this.alertService.success('Login Successful');
-        this.router.navigate(['verify'], {
-          queryParams: { email: this.user.email,code: this.user.code },
-        });
-      },
-      (error) => {
+        this.alertService.success('login Successful');
+        this.router.navigate(['verify'], { queryParams: { email: data.email } });
+      }, (error) => {
         this.loading = false;
-        console.log(error);
-      }
-    );
+      });
   }
+
+
 
   signup() {
     this.router.navigate(['signup']);

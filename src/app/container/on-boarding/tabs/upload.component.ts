@@ -45,10 +45,10 @@ export class UploadComponent implements OnInit, OnDestroy {
     const param$ = this.route.params;
     param$.pipe(takeWhile(() => this.isAlive), map((res: any) => res.id)).subscribe(param => {
       if (!param) {
-        // const observer$:any = this.resumeRepo.fetchAllResumes();
-        //  const resume$ = observer$[2]; 
-        // temp
-        const resume$ = this.resumeRepo.fetchAllResumes();
+        const observer$:any = this.resumeRepo.fetchAllResumes();
+         const resume$ = observer$[2]; 
+        // // temp
+        // const resume$ = this.resumeRepo.fetchAllResumes();
         resume$.pipe(takeWhile(() => this.isAlive))
           .subscribe((data: any) => {
             this.loading = false;

@@ -47,23 +47,16 @@ export class OnBoardingComponent implements OnInit {
     }
 
     ngOnInit() {
-        // const observer$ = this.resumeRepo.fetchAllResumes();
-        // const resume$ = observer$[2];
-        // resume$.pipe(takeWhile(() => this.isAlive)).subscribe(data => {
-        //   if (data.length) {
-        //     this.resume = data[0];
-        //     this.isFirstStepCompleted = true;
-        //     this.loading = false;
-        //   }
-        // });
+        const observer$ = this.resumeRepo.fetchAllResumes();
+        const resume$ = observer$[2];
+        resume$.pipe(takeWhile(() => this.isAlive)).subscribe(data => {
+          if (data.length) {
+            this.resume = data[0];
+            this.isFirstStepCompleted = true;
+            this.loading = false;
+          }
+        });
 
-        this.resumeRepo.fetchAllResumes().subscribe(data => {
-            if (data.length) {
-                this.resume = data[0];
-                this.isFirstStepCompleted = true;
-                this.loading = false;
-            }
-        })
     }
 
     finish() {

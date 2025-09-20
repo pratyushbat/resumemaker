@@ -155,8 +155,7 @@ export class ResumeFormComponent implements OnInit {
     isAlive = true;
     loading = false;
   
-    constructor(private resumeRepo: ResumeRepository, private route: ActivatedRoute ,@Inject(TEST_TOKEN)private abc :any) {
-      console.log(this.abc)
+    constructor(private resumeRepo: ResumeRepository, private route: ActivatedRoute ) {
     }
   
     ngOnDestroy() {
@@ -170,7 +169,7 @@ export class ResumeFormComponent implements OnInit {
         if (!param) {
           const observer$:any = this.resumeRepo.fetchAllResumes();
           const resume$ = observer$[2];
-          this.resumeRepo.fetchAllResumes().pipe(takeWhile(() => this.isAlive))
+         resume$.pipe(takeWhile(() => this.isAlive))
             .subscribe((data:any) => {
               console.log(data);
               this.loading = false;
@@ -182,6 +181,7 @@ export class ResumeFormComponent implements OnInit {
               return this.resumeRepo.getResumeById(id);
             }), filter(res => !!res));
           resume$.subscribe((data:any) => {
+                        console.log(data);
             this.resume = data;
             this.loading = false;
           });

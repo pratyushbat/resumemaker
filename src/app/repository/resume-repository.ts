@@ -1,37 +1,40 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../services/api.service';
-import {  Observable, of } from 'rxjs';
+import {  combineLatest, Observable, of } from 'rxjs';
 
 import { Resume } from '../models/resume';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
+
+// import { getResume, resumeError, resumeLoaded, resumeLoading } from '../reducers';
+import { Store } from '@ngrx/store';
 // import {ApiService} from '../services/api-service';
 // import {Store} from '@ngrx/store';
-// import {getResume, getResumeById, resumeError, resumeLoaded, resumeLoading} from '../reducers';
+import {getResume, getResumeById, resumeError, resumeLoaded, resumeLoading} from '../reducers';
 // import {combineLatest, Observable} from 'rxjs';
-// import {
-//   AddAwardAction,
-//   AddContactDetailAction,
-//   AddEducationAction,
-//   AddEmploymentHistoryAction, AddIndustrialExposureAction,
-//   AddInterestAction,
-//   AddLanguageAction, AddObjectiveAction, AddProjectDetailAction, AddReferenceAction,
-//   AddResumeAction,
-//   AddSkillAction, AddStrengthAction, AddWeaknessAction, DeleteAwardAction,
-//   DeleteEducationAction,
-//   DeleteEmploymentHistoryAction, DeleteIndustrialExposureAction,
-//   DeleteInterestAction, DeleteLanguageAction, DeleteObjectiveAction, DeleteProjectDetailAction, DeleteReferenceAction, DeleteResumeAction,
-//   DeleteSkillAction, DeleteStrengthAction, DeleteWeaknessAction,
-//   ResumeErrorAction,
-//   ResumeListRequestAction,
-//   ResumeListSuccessAction, UpdateAwardAction,
-//   UpdateContactDetailAction,
-//   UpdateEducationAction,
-//   UpdateEmploymentHistoryAction, UpdateIndustrialExposureAction,
-//   UpdateInterestAction,
-//   UpdateLanguageAction, UpdateObjectiveAction, UpdateProjectDetailAction, UpdateReferenceAction,
-//   UpdateResumeAction,
-//   UpdateSkillAction, UpdateStrengthAction, UpdateWeaknessAction
-// } from '../actions/resume-actions';
+import {
+  AddAwardAction,
+  AddContactDetailAction,
+  AddEducationAction,
+  AddEmploymentHistoryAction, AddIndustrialExposureAction,
+  AddInterestAction,
+  AddLanguageAction, AddObjectiveAction, AddProjectDetailAction, AddReferenceAction,
+  AddResumeAction,
+  AddSkillAction, AddStrengthAction, AddWeaknessAction, DeleteAwardAction,
+  DeleteEducationAction,
+  DeleteEmploymentHistoryAction, DeleteIndustrialExposureAction,
+  DeleteInterestAction, DeleteLanguageAction, DeleteObjectiveAction, DeleteProjectDetailAction, DeleteReferenceAction, DeleteResumeAction,
+  DeleteSkillAction, DeleteStrengthAction, DeleteWeaknessAction,
+  ResumeErrorAction,
+  ResumeListRequestAction,
+  ResumeListSuccessAction, UpdateAwardAction,
+  UpdateContactDetailAction,
+  UpdateEducationAction,
+  UpdateEmploymentHistoryAction, UpdateIndustrialExposureAction,
+  UpdateInterestAction,
+  UpdateLanguageAction, UpdateObjectiveAction, UpdateProjectDetailAction, UpdateReferenceAction,
+  UpdateResumeAction,
+  UpdateSkillAction, UpdateStrengthAction, UpdateWeaknessAction
+} from '../actions/resume-actions';
 // import {map, take} from 'rxjs/operators';
 // import {Resume} from '../models/resume';
 // import {UserUpdateAction} from '../actions/user-actions';
@@ -39,71 +42,68 @@ import { map } from 'rxjs/operators';
 @Injectable({providedIn:'root'})
 export class ResumeRepository {
   
-  constructor(private apiService: ApiService) {
+ constructor(private apiService: ApiService, private store: Store) {
+  }
+  
+  fetchAllResumes(force = false): [Observable<boolean>, Observable<boolean>, Observable<Resume[]>] {
+    const loading$ = this.store.select(resumeLoading);
+    const loaded$ = this.store.select(resumeLoaded);
+    const resume$ = this.store.select(getResume);
+    const error$ = this.store.select(resumeError);
+    combineLatest([loading$, loaded$]).pipe(take(1)).subscribe(data => {
+      if (!data[0] && !data[1] || force) {
+        this.store.dispatch(new ResumeListRequestAction());
+        this.apiService.fetchAllResumes().subscribe(resume => {
+          this.store.dispatch(new ResumeListSuccessAction(resume));
+        }, error => {
+          this.store.dispatch(new ResumeErrorAction());
+        });
+      }
+    });
+    return [loading$, error$, resume$];
   }
 
-  // fetchAllResumes(force = false): [Observable<boolean>, Observable<boolean>, Observable<Resume[]>] {
-  //   const loading$ = this.store.select(resumeLoading);
-  //   const loaded$ = this.store.select(resumeLoaded);
-  //   const resume$ = this.store.select(getResume);
-  //   const error$ = this.store.select(resumeError);
-  //   combineLatest([loading$, loaded$]).pipe(take(1)).subscribe(data => {
-  //     if (!data[0] && !data[1] || force) {
-  //       this.store.dispatch(new ResumeListRequestAction());
-  //       this.apiService.fetchAllResumes().subscribe(resume => {
-  //         this.store.dispatch(new ResumeListSuccessAction(resume));
-  //       }, error => {
-  //         this.store.dispatch(new ResumeErrorAction());
-  //       });
-  //     }
-  //   });
-  //   return [loading$, error$, resume$];
+  // fetchAllResumes(): Observable<Resume[]> {
+  // return  this.apiService.fetchAllResumes();
   // }
 
-  fetchAllResumes(): Observable<Resume[]> {
-  return  this.apiService.fetchAllResumes();
-  }
-
   getResumeById(id:any, force = false) {
-    return of(1);
-
-    // const resume$ = this.store.select((state: any) => {
-    //   return getResumeById(state, id);
-    // });
-    // resume$.pipe(take(1)).subscribe(data => {
-    //   if (!data || force) {
-    //     this.apiService.getResumeById(id).subscribe(res => {
-    //       this.store.dispatch(new AddResumeAction(res));
-    //     });
-    //   }
-    // });
-    // return resume$;
+   
+    const resume$ = this.store.select((state: any) => {
+      return getResumeById(state, id);
+    });
+    resume$.pipe(take(1)).subscribe(data => {
+      if (!data || force) {
+        this.apiService.getResumeById(id).subscribe(res => {
+          this.store.dispatch(new AddResumeAction(res));
+        });
+      }
+    });
+    return resume$;
   }
 
   saveResume(data:any): Observable<any> {
     return this.apiService.saveResume(data).pipe(map((resume) => {
-      // this.store.dispatch(new AddResumeAction(resume));
+      this.store.dispatch(new AddResumeAction(resume));
       return resume;
     }));
   }
 
   editResume(data:any, resumeId:any) {
-    return of(1);
-    // return this.apiService.editResume(data, resumeId).pipe(map((resume) => {
-    //   this.store.dispatch(new UpdateResumeAction(resume));
-    // }));
+    return this.apiService.editResume(data, resumeId).pipe(map((resume) => {
+      this.store.dispatch(new UpdateResumeAction(resume));
+    }));
   }
 
   deleteResume(resumeId:any) {
-    return of(1);
-    // return this.apiService.deleteResume(resumeId).pipe(map((resume) => {
-    //   this.store.dispatch(new DeleteResumeAction(resumeId));
-    // }));
+    return this.apiService.deleteResume(resumeId).pipe(map((resume) => {
+      this.store.dispatch(new DeleteResumeAction(resumeId));
+    }));
   }
 
   saveOrUpdateImage(image: File, resumeId: string) {
     return this.apiService.saveOrUpdateImage(image, resumeId).pipe(map((resume) => {
-      // this.store.dispatch(new UpdateResumeAction(resume));
+      this.store.dispatch(new UpdateResumeAction(resume));
       return resume;
     }));
   }
@@ -138,19 +138,19 @@ export class ResumeRepository {
 
   addSkill(data:any, resumeId: string) {
     return this.apiService.addSkill(data, resumeId).pipe(map(res => {
-      // this.store.dispatch(new AddSkillAction({skill: res, resume_id: resumeId}));
+      this.store.dispatch(new AddSkillAction({skill: res, resume_id: resumeId}));
     }));
   }
 
   updateSkill(data: any, skillId: string, resumeId: string) {
     return this.apiService.updateSkill(data, skillId).pipe(map(res => {
-      // this.store.dispatch(new UpdateSkillAction({skill: res, resume_id: resumeId}));
+      this.store.dispatch(new UpdateSkillAction({skill: res, resume_id: resumeId}));
     }));
   }
 
   deleteSkill(skillId: string, resumeId: string) {
     return this.apiService.deleteSkill(skillId).pipe(map(res => {
-      // this.store.dispatch(new DeleteSkillAction({skill: res, resume_id: resumeId}));
+      this.store.dispatch(new DeleteSkillAction({skill: res, resume_id: resumeId}));
     }));
   }
 

@@ -69,19 +69,19 @@ export class ResumeComponent implements OnInit, OnDestroy {
   }
 
   fetchData() {
-    const observer$:Observable<any> = this.resumeRepo.fetchAllResumes();
-    // observer$[2].subscribe((resumes:any) => {
-    //   this.resumeList = resumes;
-    // });
-    // observer$[0].subscribe(loading => {
-    //   this.loading = loading;
-    // });
-
-  this.loading = true;
-     observer$.subscribe((resumes:any) => {
+    const observer$= this.resumeRepo.fetchAllResumes();
+    observer$[2].subscribe((resumes:any) => {
       this.resumeList = resumes;
-      this.loading = false;
-    },err=> this.loading = false);
+    });
+    observer$[0].subscribe(loading => {
+      this.loading = loading;
+    });
+
+  // this.loading = true;
+  //    observer$.subscribe((resumes:any) => {
+  //     this.resumeList = resumes;
+  //     this.loading = false;
+  //   },err=> this.loading = false);
  
   }
 
