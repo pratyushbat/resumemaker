@@ -86,6 +86,7 @@ import { NotFoundComponent } from './container/not-found.component';
 import {StoreModule} from '@ngrx/store';
 import { rootReducer } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { SingleResumeComponent } from './container/single-resume.component';
 
 
 @NgModule({
@@ -177,7 +178,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     ResumeCardComponent,
     ProfileSettingsComponent,
     PasswordComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SingleResumeComponent
 
     ],
   imports: [

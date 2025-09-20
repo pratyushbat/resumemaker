@@ -35,6 +35,7 @@ import {
   UpdateResumeAction,
   UpdateSkillAction, UpdateStrengthAction, UpdateWeaknessAction
 } from '../actions/resume-actions';
+import { UserUpdateAction } from '../actions/user-actions';
 // import {map, take} from 'rxjs/operators';
 // import {Resume} from '../models/resume';
 // import {UserUpdateAction} from '../actions/user-actions';
@@ -124,7 +125,7 @@ export class ResumeRepository {
 
   updateContactDetails(data:any, contactDetailId: string, resumeId: string) {
     return this.apiService.updateContactDetails(data, contactDetailId).pipe(map((res) => {
-      // this.store.dispatch(new UpdateContactDetailAction({resume_id: resumeId, contact: res}));
+      this.store.dispatch(new UpdateContactDetailAction({resume_id: resumeId, contact: res}));
       return res;
     }));
   }
@@ -397,7 +398,7 @@ export class ResumeRepository {
 
   updateOnBoarding(data: { onboarding: number }) {
     return this.apiService.updateOnBoarding(data).pipe(map(res => {
-      // this.store.dispatch(new UserUpdateAction(res));
+      this.store.dispatch(new UserUpdateAction(res));
     }));
   }
 

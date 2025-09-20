@@ -22,6 +22,7 @@ import { ResumeFormComponent } from './container/resume-form.component';
 import { UploadComponent } from './container/on-boarding/tabs/upload.component';
 import { LogoutComponent } from './components/logout.component';
 import { NotFoundComponent } from './container/not-found.component';
+import { SingleResumeComponent } from './container/single-resume.component';
 
 // const routes: Routes = [
 //   {path:'',component:LoginComponent , canActivate: [AnonGuard],},
@@ -72,7 +73,7 @@ const routes: Routes = [
         {path: 'settings', component: SettingComponent},
         // {path: 'resume/template/:id', component: TemplatesComponent},
         // {path: 'resume/template/:id/:templateId', component: SingleTemplateComponent},
-        // {path: 'resume/preview/:id', component: SingleResumeComponent},
+        {path: 'resume/preview/:id', component: SingleResumeComponent},
         {
           path: 'resume/edit/:id', component: ResumeFormComponent
         },
