@@ -12,17 +12,22 @@ import { AnonGuard } from './auth-guards/anon-guard.component';
 import { OnBoardingComponent } from './container/on-boarding/onboarding.component';
 import { VerificationInComplete } from './auth-guards/verification-incompleted';
 import { VerificationComplete } from './auth-guards/verification-completed';
-import { DashboardComponent } from './layout/dashboard.component';
+// import { DashboardComponent } from './layout/dashboard.component';
 import { OnBoardingComplete } from './auth-guards/onboarding-complete';
 import { OnBoardingIncomplete } from './auth-guards/onboarding-in-complete';
 import { OnBoardingIntroComponent } from './container/on-boarding/on-boarding-intro.component';
-import { ResumeComponent } from './dashboard/resume.component';
-import { SettingComponent } from './dashboard/setting.component';
+// import { ResumeComponent } from './dashboard/resume.component';
+// import { SettingComponent } from './dashboard/setting.component';
 import { ResumeFormComponent } from './container/resume-form.component';
-import { UploadComponent } from './container/on-boarding/tabs/upload.component';
+import { UploadComponent } from './container/tabs/upload.component';
 import { LogoutComponent } from './components/logout.component';
 import { NotFoundComponent } from './container/not-found.component';
 import { SingleResumeComponent } from './container/single-resume.component';
+import { DashboardComponent } from './container/layout/dashboard.component';
+import { ResumeComponent } from './container/dashboard/resume.component';
+import { SettingComponent } from './container/dashboard/setting.component';
+import { SingleTemplateComponent } from './container/single-template.component';
+import { TemplatesComponent } from './container/templates.component';
 
 // const routes: Routes = [
 //   {path:'',component:LoginComponent , canActivate: [AnonGuard],},
@@ -71,8 +76,8 @@ const routes: Routes = [
       path: 'dashboard', component: DashboardComponent,
       children: [{path: 'resume', component: ResumeComponent},
         {path: 'settings', component: SettingComponent},
-        // {path: 'resume/template/:id', component: TemplatesComponent},
-        // {path: 'resume/template/:id/:templateId', component: SingleTemplateComponent},
+        {path: 'resume/template/:id', component: TemplatesComponent},
+        {path: 'resume/template/:id/:templateId', component: SingleTemplateComponent},
         {path: 'resume/preview/:id', component: SingleResumeComponent},
         {
           path: 'resume/edit/:id', component: ResumeFormComponent

@@ -2,7 +2,8 @@ import {Component, OnDestroy} from '@angular/core';
 
 import {takeWhile} from 'rxjs/operators';
 import {Router} from '@angular/router';
-import { AuthRepository } from '../repository/auth-repository';
+import { AuthRepository } from 'src/app/repository/auth-repository';
+// import { AuthRepository } from '../repository/auth-repository';
 
 @Component({
   selector: 'app-header',

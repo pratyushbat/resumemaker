@@ -3,10 +3,13 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 // import {ResumeRepository} from '../../repository/resume-repository';
 import {MatDialog} from '@angular/material/dialog';
 // import {AddOrEditResumeComponent} from '../../components/dialogues/add-or-edit-resume.component';
-import { ResumeRepository } from '../repository/resume-repository';
-import { Resume } from '../models/resume';
-import { AddOrEditResumeComponent } from '../components/dialogues/add-or-edit-resume.component';
+// import { ResumeRepository } from '../repository/resume-repository';
+// import { Resume } from '../models/resume';
+// import { AddOrEditResumeComponent } from '../components/dialogues/add-or-edit-resume.component';
 import { Observable } from 'rxjs';
+import { AddOrEditResumeComponent } from 'src/app/components/dialogues/add-or-edit-resume.component';
+import { Resume } from 'src/app/models/resume';
+import { ResumeRepository } from 'src/app/repository/resume-repository';
 
 @Component({
   selector: 'app-resume',

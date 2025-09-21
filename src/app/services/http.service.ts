@@ -15,8 +15,12 @@ export class HttpService {
     return this.httpClient.get(this.baseUrl + url, data).pipe(catchError(this.errorHandler.bind(this)));
   }
   
-  post(url: string, body: any, params?: any) :Observable<any>{
-     const data = { params, headers: this.getAuthHeader() };
+  post(url: string, body: any, params?: any,pdf:boolean=false) :Observable<any>{
+     var data;
+    if(!pdf) 
+       data = { params, headers: this.getAuthHeader() };
+      else
+      data = { params:params, headers: this.getAuthHeader(),responseType: "blob" as const };
     return this.httpClient.post(this.baseUrl + url, body,data).pipe(catchError(this.errorHandler.bind(this)));
   }
 

@@ -20,10 +20,10 @@ import { VerificationComponent } from './container/verification.component';
 import { OnBoardingComponent } from './container/on-boarding/onboarding.component';
 import { ResumeFormComponent, TEST_TOKEN } from './container/resume-form.component';
 import { ResumeNameComponent } from './container/on-boarding/resume-name.component';
-import { UploadComponent } from './container/on-boarding/tabs/upload.component';
-import { ImportYoutubeComponent } from './container/on-boarding/tabs/import-youtube.component';
-import { UploadFromDiskComponent } from './container/on-boarding/tabs/upload-from-disk.component';
-import { UploadImageComponent } from './container/on-boarding/tabs/upload-image.component';
+import { UploadComponent } from './container/tabs/upload.component';
+import { ImportYoutubeComponent } from './container/tabs/import-youtube.component';
+import { UploadFromDiskComponent } from './container/tabs/upload-from-disk.component';
+import { UploadImageComponent } from './container/tabs/upload-image.component';
 import { ContactDetailsComponent } from './components/resume-form/contact-details.component';
 import { ContactDetailFormComponent } from './components/resume-form/resume-dialogues/contact-detail-form.component';
 import { EducationComponent } from './components/resume-form/education.component';
@@ -74,10 +74,10 @@ import { WeaknessCardComponent } from './components/resume-form/resume-card/weak
 import { WeaknessFormComponent } from './components/resume-form/resume-dialogues/weakness-form.component';
 import { WeaknessComponent } from './components/resume-form/weakness.component';
 import { WeaknessListComponent } from './components/resume-form/resume-list/weakness-list.component';
-import { HeaderComponent } from './layout/header.component';
-import { DashboardComponent } from './layout/dashboard.component';
-import { SettingComponent } from './dashboard/setting.component';
-import { ResumeComponent } from './dashboard/resume.component';
+// import { HeaderComponent } from './layout/header.component';
+// import { DashboardComponent } from './layout/dashboard.component';
+// import { SettingComponent } from './dashboard/setting.component';
+// import { ResumeComponent } from './dashboard/resume.component';
 import { AddOrEditResumeComponent } from './components/dialogues/add-or-edit-resume.component';
 import { ResumeCardComponent } from './components/resume-card.component';
 import { ProfileSettingsComponent } from './components/profile-settings.component';
@@ -102,6 +102,20 @@ import { TemplateAwardsComponent } from './components/resume-template/template-c
 import { TemplateContactDetailComponent } from './components/resume-template/template-contact-detail.component';
 import { TemplateDetailsComponent } from './components/resume-template/template-details.component';
 import { TemplateButtonsComponent } from './components/resume-template/template-buttons.component';
+import { TraditionalPanelTemplateComponent } from './components/templates/traditional-panel-template.component';
+import { RoyalTemplateComponent } from './components/templates/royal-template.component';
+import { ModernTemplateComponent } from './components/templates/modern-template.component';
+import { ClassicTemplateComponent } from './components/templates/classic-template.component';
+import { BluesTemplateComponent } from './components/templates/blues-template.component';
+import { VideoComponent } from './components/video.component';
+import { TemplateCardComponent } from './components/template-card.component';
+import { ErrorComponent } from './components/error.component';
+import { HeaderComponent } from './container/layout/header.component';
+import { DashboardComponent } from './container/layout/dashboard.component';
+import { SettingComponent } from './container/dashboard/setting.component';
+import { ResumeComponent } from './container/dashboard/resume.component';
+import { SingleTemplateComponent } from './container/single-template.component';
+import { TemplatesComponent } from './container/templates.component';
 
 
 @NgModule({
@@ -209,8 +223,18 @@ import { TemplateButtonsComponent } from './components/resume-template/template-
     TemplateReferenceComponent,
     TemplateSkillCardComponent,
     TemplateStrengthCardComponent,
-    TemplateWeaknessCardComponent
+    TemplateWeaknessCardComponent,
+    TraditionalPanelTemplateComponent,
+    RoyalTemplateComponent,
+    ModernTemplateComponent,
+    ClassicTemplateComponent,
+    BluesTemplateComponent,
+    VideoComponent,
 
+    TemplateCardComponent,
+    ErrorComponent,
+    SingleTemplateComponent,
+    TemplatesComponent
     ],
   imports: [
     BrowserModule,

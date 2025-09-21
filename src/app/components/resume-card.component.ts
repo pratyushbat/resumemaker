@@ -12,10 +12,10 @@ import { AddOrEditResumeComponent } from './dialogues/add-or-edit-resume.compone
   selector: 'app-resume-card',
   template: `
     <mat-card on-mouseover="hover = true"
-              on-mouseleave="hover = false" fxLayout="column" fxLayoutAlign="center center">
+              fxLayout="column" fxLayoutAlign="center center">
       <img mat-card-image src="../../../assets/resume.png" style="width:140px">
       <span style="color: #538ec3">{{resume.name}}</span>
-      <div class="resume-hover" *ngIf="hover">
+      <div class="resume-hover" >
         <div style="margin-top: 5rem;" fxLayoutAlign="start center" fxLayout="row wrap" fxLayoutGap="40px">
           <button mat-icon-button>
             <mat-icon class="icon" matTooltip="share">share</mat-icon>
@@ -23,14 +23,14 @@ import { AddOrEditResumeComponent } from './dialogues/add-or-edit-resume.compone
           <button (click)="preview()" mat-icon-button>
             <mat-icon class="icon" matTooltip="Preview">visibility</mat-icon>
           </button>
-          <button mat-icon-button>
-            <mat-icon (click)="delete()" class="icon" matTooltip="Delete">delete</mat-icon>
+          <button (click)="delete()" mat-icon-button>
+            <mat-icon  class="icon" matTooltip="Delete">delete</mat-icon>
           </button>
           <button (click)="editResume()" mat-icon-button>
             <mat-icon class="icon" matTooltip="Edit">create</mat-icon>
           </button>
-          <button mat-icon-button>
-            <mat-icon (click)="download()" class="icon" matTooltip="Download">download</mat-icon>
+          <button (click)="download()" mat-icon-button>
+            <mat-icon  class="icon" matTooltip="Download111111111111111">download1</mat-icon>
           </button>
         </div>
       </div>

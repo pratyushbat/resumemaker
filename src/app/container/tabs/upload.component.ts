@@ -3,8 +3,8 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { filter, map, switchMap, takeWhile } from 'rxjs/operators';
-import { ResumeRepository } from '../../../repository/resume-repository';
-import { Resume } from '../../../models/resume';
+import { ResumeRepository } from '../../repository/resume-repository';
+import { Resume } from '../../models/resume';
 
 @Component({
   selector: 'app-upload',
