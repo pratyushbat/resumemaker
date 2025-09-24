@@ -17,6 +17,6 @@ export class LogoutComponent {
     this.router.navigate(['']);
     // this.router.navigate(['demo', {outlets: {'chat-r': ['chat']}}]);
 // final soolution
-    // window.open('/(chat-r:chat)', '_self');
+    window.open('/(chat-r:chat)', '_self');
   }
 }

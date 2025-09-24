@@ -28,6 +28,7 @@ import { ResumeComponent } from './container/dashboard/resume.component';
 import { SettingComponent } from './container/dashboard/setting.component';
 import { SingleTemplateComponent } from './container/single-template.component';
 import { TemplatesComponent } from './container/templates.component';
+import { SecondaryComponent } from './container/secondary.component';
 
 // const routes: Routes = [
 //   {path:'',component:LoginComponent , canActivate: [AnonGuard],},
@@ -41,6 +42,9 @@ import { TemplatesComponent } from './container/templates.component';
 //   {path:'practice',component:PracticeComponent}
 // ];
 const routes: Routes = [
+   {
+    path: 'second', component: SecondaryComponent
+  },
   {
     path: '',
     canActivate: [AnonGuard],
@@ -55,6 +59,10 @@ const routes: Routes = [
     canActivate: [AuthGuard, VerificationInComplete],
     children: [{ path: 'verify', component: VerificationComponent }],
   },
+    {
+    path: 'chat', component: SecondaryComponent, outlet: 'chat-r'
+  },
+   
   {
     path: '',
     canActivate: [AuthGuard, VerificationComplete, OnBoardingIncomplete],
