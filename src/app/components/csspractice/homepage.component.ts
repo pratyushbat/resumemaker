@@ -607,6 +607,13 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html for more info 
       }
 
       /* grid system -- mobile first! */
+
+      #devs ul {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        --columns: 2;
+      }
       main {
         /* article styles */
         display: flex;
@@ -614,14 +621,21 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html for more info 
         justify-content: space-between;
         --columns: 16;
       }
-      section {
+      section,
+      #devs li {
         /* article styles */
         --width: 16;
+        --gap-constant:0.3%;
         --initialbasis: calc(var(--width, 0) / var(--columns, 16) * 100%);
-        --gap: calc((var(--columns) - var(--width)) * .3%);
+        --gap: calc((var(--columns) - var(--width)) * var(--gap-constant));
         flex-basis: calc(var(--initialbasis) - var(--gap));
       }
-
+      
+      #devs li {
+        --width: 1;
+        --gap-constant:3%;
+      }
+      
       @media (min-width: 740px) {
         .floatleft {
           float: left;
@@ -631,23 +645,80 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html for more info 
           float: right;
           margin: 0 0 1rem 1rem;
         }
+
+        main {
+          --columns: 11;
+        }
+
+        #first {
+          --width: 5;
+          order: 1;
+        }
+        #main {
+          --width: 6;
+          order: 2;
+        }
+
+        #devs {
+          --width: 11;
+          order: 3;
+        }
+
+        #resources {
+          --width: 11;
+          order: 4;
+        }
+
+        #devs ul{
+          --columns:5
+        }
       }
       @media (min-width: 950px) {
+        main {
+          --columns: 14;
+        }
+
+        #first {
+          --width: 5;
+          order: 1;
+        }
+        #main {
+          --width: 6;
+          order: 2;
+        }
+
+        #devs {
+          --width: 14;
+          order: 4;
+        }
+
+        #resources {
+          --width: 3;
+          order: 3;
+        }
+
+
       }
       @media (min-width: 1200px) {
         /* #first-5 ,#main-6, #devs-2,#resources-3 */
-        #first {
-          --width: 5;
+        main {
+          /*  redeclaring as it falls in 950px scope as wrell */
+          --columns: 16;
         }
+
         #main {
           --width: 6;
         }
         #devs {
           --width: 2;
+          order: 3;
         }
 
         #resources {
-          --width: 3;
+          order: 4;
+        }
+          #devs ul{
+          --columns:1
         }
       }
     `,
