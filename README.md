@@ -32,3 +32,5 @@ in package json
 ^ latest version
   same version 
 ~ beta version
+
+

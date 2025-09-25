@@ -116,6 +116,8 @@ import { SettingComponent } from './container/dashboard/setting.component';
 import { ResumeComponent } from './container/dashboard/resume.component';
 import { SingleTemplateComponent } from './container/single-template.component';
 import { TemplatesComponent } from './container/templates.component';
+import { FlextBoxPracticeComponent } from './components/csspractice/flexboxpractice.component';
+import { HomepageCssComponent } from './components/csspractice/homepage.component';
 
 
 @NgModule({
@@ -234,7 +236,9 @@ import { TemplatesComponent } from './container/templates.component';
     TemplateCardComponent,
     ErrorComponent,
     SingleTemplateComponent,
-    TemplatesComponent
+    TemplatesComponent,
+    FlextBoxPracticeComponent,
+    HomepageCssComponent
     ],
   imports: [
     BrowserModule,

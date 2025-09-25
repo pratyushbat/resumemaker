@@ -29,6 +29,8 @@ import { SettingComponent } from './container/dashboard/setting.component';
 import { SingleTemplateComponent } from './container/single-template.component';
 import { TemplatesComponent } from './container/templates.component';
 import { SecondaryComponent } from './container/secondary.component';
+import { FlextBoxPracticeComponent } from './components/csspractice/flexboxpractice.component';
+import { HomepageCssComponent } from './components/csspractice/homepage.component';
 
 // const routes: Routes = [
 //   {path:'',component:LoginComponent , canActivate: [AnonGuard],},
@@ -44,6 +46,12 @@ import { SecondaryComponent } from './container/secondary.component';
 const routes: Routes = [
    {
     path: 'second', component: SecondaryComponent
+  },
+   {
+    path: 'flex', component: FlextBoxPracticeComponent
+  },
+   {
+    path: 'homecss', component: HomepageCssComponent
   },
   {
     path: '',
