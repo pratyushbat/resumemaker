@@ -1,159 +1,92 @@
-/* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-::ng-deep mat-snack-bar-container > .alert-success {
-    background-color: #dff0d8 !important; 
-    border-color:#d0e9c6 !important;
-    color:#3c763d !important;
- }
- ::ng-deep mat-snack-bar-container.alert-error{
-     background-color: #f2dede !important; 
-     border-color:#ebcccc !important;
-     color:#a94442 !important;
- }
- 
- ::ng-deep mat-snack-bar-container.alert .mat-simple-snackbar{
-  justify-content: center !important;
- }
-
- .overlay {
-    width: 100%;
-    height: 100%;
-  }
-
-  .form-flex{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction: column;
-    gap:40px;
+html {
+    box-sizing: border-box;
 }
-  .form-flex-auto{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction: column;
-    overflow: auto;
+*, *::before, *::after {
+    box-sizing: inherit;
 }
-  .form-flex-row{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction: row;
-    gap:40px;
+body {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    margin: 1rem;
+}
+header, h1, h2, h3, h4, h5, h6 {
+    font-family: Nobile, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+section > h1 {
+    color: #9EA9C1;
+}
+/* header styles */
+header {
+    font-weight: 400;
+}
+header h1 {
+    margin: 0;
+    font-weight: 400;
+    color: #C85028;
+}
+header h2 {
+    font-weight: 400;
 }
 
-
-/* 
- */
-
- 
-.cards-outer-div {
-    position: relative;
-    background: #e5fade;
-    border: 2.5px dashed #d8d8d8;
-    width: 95%;
-    height: 7rem;
-  }
-  
-  .hover-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0);
-    height: 100%;
-    width: 100%;
-    transition: background 0.5s ease;
-  }
-  
-  .resume-form-info-card-heading {
-    margin: 0 !important;;
-    font-weight: bold !important;
-    word-break: break-all !important;
-  }
-  
-  .resume-form-mat-icon-button {
-    margin-top: 2rem !important;
-  }
-  
-  .resume-form-mat-icon {
-    font-size: 30px !important;
-  }
-  
-  .cards-outer-div:hover .hover-container {
+/* article styles */
+article {
+    border-bottom: 4px solid #3c2b67;
+    padding-bottom: 2rem;
+}
+img, .floatleft, .floatright {
     display: block;
-    background: rgba(0, 0, 0, 0.3);
-  }
-  
-  .cards-outer-div:hover .hover {
-    opacity: 1;
-  }
-  
-  .hover {
-    opacity: 0;
-    text-align: center;
-    transition: opacity .35s ease;
-  }
-  
-  .template-description {
-    font-weight: 300;
-    font-size: 1rem;
-    line-height: 17pt;
-    word-wrap: break-word;
-    overflow: hidden;
-    padding: 5px;
-  }
-  
-  .tabs-heading {
-    font-weight: bolder !important;
-    font-size: 2rem !important;
-    color: #538ec3;
-    text-align: center !important;
-    margin-top: 2rem !important;
-  }
-  
-  .overlay {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .mat-tab-label {
-    color: white !important;
-  }
-  
-  .mat-expansion-panel-header {
-    height: 5rem !important;
-    padding: 10px !important;
-  }
-  
-  button {
-    color: white !important;
-  }
-  
-  .alert-success {
-    background-color: #dff0d8;
-    border-color: #d0e9c6;
-    color: #3c763d;
-  }
-  
-  .alert-error {
-    background-color: #f2dede;
-    border-color: #ebcccc;
-    color: #a94442;
-  }
-  
-  .alert .mat-simple-snackbar {
-    justify-content: center;
-  }
-  
-  .setting-label {
-    font-size: 1.2rem !important;
-  }
-  
-  .settings-input {
-    width: 70% !important;
-  }
-  
+    margin: 1rem auto 0 auto;
+    max-width: 100%;
+}
+a {
+    color: #C85028;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover {
+    color: #7E64BE;
+}
+/* dev styling */
+#devs img {
+    display: inline;
+    max-width: 125px;
+}
+#devs figure {
+    margin: 0;
+    padding: 0;
+}
+/* resources styling */
+#resources {
+    background-color: #f1f1f1;
+    padding: 1rem;
+}
+#resources h1 {
+    color: #000;
+    margin-top: 0;
+}
+#resources h1 small {
+    font-weight: 400;
+}
+#resources ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+#resources li {
+    border-bottom: 1px solid #ccc;
+    display: block;
+}
+#resources a {
+    display: block;
+    color: #3c2b67;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+#resources a:hover {
+    color: #6a7a9f;
+}
+#devs ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}

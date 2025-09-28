@@ -118,6 +118,9 @@ import { SingleTemplateComponent } from './container/single-template.component';
 import { TemplatesComponent } from './container/templates.component';
 import { FlextBoxPracticeComponent } from './components/csspractice/flexboxpractice.component';
 import { HomepageCssComponent } from './components/csspractice/homepage.component';
+import { InsideBookComponent } from './components/csspractice/book.component';
+import { FormComponent } from './components/csspractice/form.component';
+import { TableComponent } from './components/csspractice/table.component';
 
 
 @NgModule({
@@ -238,7 +241,10 @@ import { HomepageCssComponent } from './components/csspractice/homepage.componen
     SingleTemplateComponent,
     TemplatesComponent,
     FlextBoxPracticeComponent,
-    HomepageCssComponent
+    HomepageCssComponent,
+    InsideBookComponent,
+    FormComponent,
+    TableComponent
     ],
   imports: [
     BrowserModule,

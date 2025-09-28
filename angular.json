@@ -26,7 +26,12 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/purple-green.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/inside.css",
+              "src/layout.css",
+              "src/tables.css",
+              "src/nav.css",
+              "src/form.css" 
             ],
             "scripts": []
           },
@@ -89,7 +94,12 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/purple-green.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/inside.css",
+              "src/layout.css",
+              "src/tables.css",
+              "src/nav.css",
+              "src/form.css" 
             ],
             "scripts": []
           }

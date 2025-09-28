@@ -31,6 +31,9 @@ import { TemplatesComponent } from './container/templates.component';
 import { SecondaryComponent } from './container/secondary.component';
 import { FlextBoxPracticeComponent } from './components/csspractice/flexboxpractice.component';
 import { HomepageCssComponent } from './components/csspractice/homepage.component';
+import { InsideBookComponent } from './components/csspractice/book.component';
+import { FormComponent } from './components/csspractice/form.component';
+import { TableComponent } from './components/csspractice/table.component';
 
 // const routes: Routes = [
 //   {path:'',component:LoginComponent , canActivate: [AnonGuard],},
@@ -52,6 +55,15 @@ const routes: Routes = [
   },
    {
     path: 'homecss', component: HomepageCssComponent
+  },
+   {
+    path: 'inside', component: InsideBookComponent
+  },
+   {
+    path: 'form', component: FormComponent
+  },
+   {
+    path: 'table', component: TableComponent
   },
   {
     path: '',
