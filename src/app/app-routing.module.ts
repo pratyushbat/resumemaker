@@ -60,7 +60,7 @@ const routes: Routes = [
     path: 'inside', component: InsideBookComponent
   },
    {
-    path: 'form', component: FormComponent
+    path: 'form', loadComponent:  ()=>import('./components/csspractice/form.component').then(c=>c.FormComponent);
   },
    {
     path: 'table', component: TableComponent
