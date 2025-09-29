@@ -243,8 +243,7 @@ import { TableComponent } from './components/csspractice/table.component';
     FlextBoxPracticeComponent,
     HomepageCssComponent,
     InsideBookComponent,
-    FormComponent,
-    TableComponent
+    FormComponent
     ],
   imports: [
     BrowserModule,

@@ -354,7 +354,7 @@ caption {
         display: table-row-group;
     }
     th, td { 
-        display: table-cell; 
+        display: table-cell;  
         padding: 0.5em;
     }
     tr {
@@ -401,7 +401,8 @@ aside li {
 
   
   `
-]
+],
+standalone:true
 })
 export class TableComponent {
     constructor() {}

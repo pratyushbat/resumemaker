@@ -60,10 +60,21 @@ const routes: Routes = [
     path: 'inside', component: InsideBookComponent
   },
    {
-    path: 'form', loadComponent:  ()=>import('./components/csspractice/form.component').then(c=>c.FormComponent);
+    path: 'table', loadComponent:  ()=>import('./components/csspractice/table.component').then(c=>c.TableComponent)
+  },
+  
+   {
+    path: 'grifflay', loadComponent:  ()=>import('./components/csspractice/layout.component').then(c=>c.LayCssGriffinComponent)
   },
    {
-    path: 'table', component: TableComponent
+    path:  'griffin', loadComponent:  ()=>import('./components/csspractice/griffin/griffin.component').then(c=>c.GriffinComponent),
+     children: [
+      { path: '', loadComponent:  ()=>import('./components/csspractice/griffin/cssone.component').then(c=>c.CssOneComponent)},
+      { path: 'csstwo', loadComponent:  ()=>import('./components/csspractice/griffin/csstwo.component').then(c=>c.CssTwoComponent)},
+    ],
+  },
+   {
+    path: 'form', component: FormComponent
   },
   {
     path: '',
