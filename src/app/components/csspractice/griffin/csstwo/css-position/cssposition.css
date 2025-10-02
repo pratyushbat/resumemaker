@@ -1,0 +1,36 @@
+   /**
+            position: static|absolute|relative|fixed|sticky
+        **/
+        
+        .box{
+            border:1px solid #333;
+            padding: 1rem;
+            margin: 1rem auto;
+        }
+        .box:nth-child(1){
+            position: static;
+            background-color: hsla(75, 50%, 50%, 0.8);
+        }
+        .box:nth-child(2){
+            position: relative;
+            bottom: 50px;
+            right: 200px;
+            background-color: hsla(125, 50%, 50%, 0.8);
+        }
+        .box:nth-child(3){
+            position: absolute;
+            top: 50px;
+            bottom: 50px;
+            right: 200px;
+            left: 200px;
+            background-color: hsla(175, 50%, 50%, 0.8);
+        }
+        .box:nth-child(4){
+            position: fixed;
+            top: 50px;
+            left: 50px;
+            background-color: hsla(225, 50%, 50%, 0.8);
+        }
+        main{
+            padding-bottom: 600px;
+        }

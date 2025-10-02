@@ -70,7 +70,7 @@ const routes: Routes = [
     path:  'griffin', loadComponent:  ()=>import('./components/csspractice/griffin/griffin.component').then(c=>c.GriffinComponent),
      children: [
       { path: '', loadComponent:  ()=>import('./components/csspractice/griffin/cssone.component').then(c=>c.CssOneComponent)},
-      { path: 'csstwo', loadComponent:  ()=>import('./components/csspractice/griffin/csstwo.component').then(c=>c.CssTwoComponent)},
+      { path: 'csstwo', loadComponent:  ()=>import('./components/csspractice/griffin/csstwo/csstwo.component').then(c=>c.CssTwoComponent)},
     ],
   },
    {
