@@ -94,3 +94,9 @@
             content: attr(data-font) "::" attr(title);
 
         }
+     
+        
+        
+        h1,h2{
+         color: var(--gcolor);
+        }

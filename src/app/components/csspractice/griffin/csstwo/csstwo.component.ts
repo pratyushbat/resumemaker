@@ -19,5 +19,10 @@ export class CssTwoComponent implements OnInit {
     let timmy= setInterval(()=>{
      h2.classList.toggle('nine')
     },2000) */
+
+     document.addEventListener('DOMContentLoaded', ()=>{
+            let html = document.documentElement;
+            html.style.setProperty('--gcolor', '#bada55');
+        })
   }
 }
