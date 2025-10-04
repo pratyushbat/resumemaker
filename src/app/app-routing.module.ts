@@ -77,6 +77,7 @@ const routes: Routes = [
       { path: 'flextwo', loadComponent:  ()=>import('./components/csspractice/griffin/flex/flextwocomponent').then(c=>c.FlexTwoComponent)},
       { path: 'target', loadComponent:  ()=>import('./components/csspractice/griffin/target/target.component').then(c=>c.TargetComponent)},
       { path: 'selector', loadComponent:  ()=>import('./components/csspractice/griffin/selector/selector.component').then(c=>c.SelectorComponent)},
+      { path: 'mediaq', loadComponent:  ()=>import('./components/csspractice/griffin/mediaquery.component').then(c=>c.MediaQComponent)},
     ],
   },
    {

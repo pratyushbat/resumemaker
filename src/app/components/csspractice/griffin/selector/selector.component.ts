@@ -4,9 +4,19 @@ import { Component, Input } from '@angular/core';
     selector: 'app-selector',
     template: `
            <header>
-        <h1>Attribute Selectors</h1>
+           <h1>Attribute Selectors</h1>
+        <h1>CSS Sibling Selectors</h1>
+        <h2>General &amp; Adjacent</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, dicta, sit. Obcaecati rerum voluptate, consequatur ex soluta eligendi vero at. Nisi temporibus amet nobis vel nulla totam corporis facere enim?</p>
     </header>
     <main>
+     <h2>main area heading</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#">Ipsum ullam</a> excepturi id, explicabo sequi reiciendis placeat! Non iusto rerum quasi ipsa quos perspiciatis veritatis, commodi, mollitia inventore magni odit dolores!</p>
+        <p>Itaque aliquid quo provident harum quam commodi aperiam <a href="#">cum maxime dicta</a> voluptatem delectus quaerat, perspiciatis ipsam architecto nisi amet dignissimos asperiores unde eos natus aliquam, non explicabo incidunt. Dolorum, esse!</p>
+        <p>Sit harum blanditiis, perferendis accusantium <a href="#">asperiores <mark>praesentium quam</mark> illo repellendus.</a> Illo eligendi beatae minima autem esse delectus maxime sint at id officiis dolore fuga, necessitatibus ipsum a dicta perferendis eos.</p>
+    
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi illum atque, doloribus ullam reprehenderit, recusandae quaerat veritatis voluptatibus molestiae rerum esse molestias delectus, tempora quae in fugit ex sit. Commodi!</p>
+ 
         <p data-beatle="john-ringo"><a href="https://www.example.com/document.pdf">Sample</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste voluptate, a obcaecati quae consequuntur nihil. Eaque voluptates, praesentium, tempore minima veritatis quam, necessitatibus illo ex officiis voluptate sit quibusdam perspiciatis.</p>
         <p data-beatle="paul">Odio voluptas asperiores dicta facere nostrum cumque tenetur perferendis aut sint doloremque autem numquam quasi, eligendi quam sapiente quisquam voluptates beatae sunt magni ad eos sed veniam fugiat. Mollitia, iusto!</p>
         <p data-beatle="george">Optio eligendi cupiditate, at laborum porro veniam libero ipsam voluptatibus vitae aliquid dolore iste nemo mollitia expedita. Deleniti consectetur laudantium minima aperiam quisquam. Corporis quos, unde tempora deleniti, quaerat molestiae!</p>
@@ -22,6 +32,7 @@ import { Component, Input } from '@angular/core';
         <p class="more">Minus cupiditate sint quos delectus libero a necessitatibus eius accusantium corporis doloribus voluptatibus laborum, facere aut eaque at dolorem eveniet officia ducimus. Dolores delectus repellendus natus! Esse doloremque a blanditiis? </p>
         
         <p class="more">Facere, consequuntur! </p>
+        <a href="">asdf </a>
         </div>
     <footer>
         <p>&copy; 2018 Turkey Stuff Inc.</p>
@@ -93,6 +104,55 @@ import { Component, Input } from '@angular/core';
             cursor: pointer;
         }
 
+
+
+          /*
+        adjacent sibling +
+        general sibling ~
+        */
+        h1 + h2{
+            color:orange;
+        }
+        h2 + p{
+            color: red;
+        }
+        h2 ~ p{
+            border-left: 10px solid cornflowerblue;
+        }
+        p ~ p{
+           font-size: 1rem;
+        }
+
+
+
+         /**************
+        ul li  - descendant
+        ul > li  - child
+        Both work with tag, class, id, pseudo-class, etc
+        **************/
+        main a{
+            /* anchors that are descendants of main */
+            text-decoration: overline
+        }
+        main > a{
+            /* anchors that are children of main */
+            font-size: 8rem;
+        }
+        p > a{
+            /* anchors that are children of p */
+            color: orange;
+        }
+        
+        a > mark{
+            /* marks that are children of a */
+            color: aqua;
+        }
+        main mark{
+            /* marks that are descendants of main */
+            font-size: 2rem;
+            color: red;
+            color: green;
+        }
         
     `
     ],
