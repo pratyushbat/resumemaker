@@ -78,6 +78,8 @@ const routes: Routes = [
       { path: 'target', loadComponent:  ()=>import('./components/csspractice/griffin/target/target.component').then(c=>c.TargetComponent)},
       { path: 'selector', loadComponent:  ()=>import('./components/csspractice/griffin/selector/selector.component').then(c=>c.SelectorComponent)},
       { path: 'mediaq', loadComponent:  ()=>import('./components/csspractice/griffin/mediaquery.component').then(c=>c.MediaQComponent)},
+      { path: 'dropdown', loadComponent:  ()=>import('./components/csspractice/griffin/dropdown/dropdown.comonent').then(c=>c.DropDownComponent)},
+      { path: 'flexform', loadComponent:  ()=>import('./components/csspractice/griffin/flex/flexform.component').then(c=>c.FlexFormComponent)},
     ],
   },
    {

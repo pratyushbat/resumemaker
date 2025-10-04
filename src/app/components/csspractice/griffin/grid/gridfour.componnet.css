@@ -1,0 +1,63 @@
+    main{
+            display:grid;
+            grid-template-columns: 1fr 3fr 1fr 1fr;
+            grid-template-rows: 15rem 12rem 5rem;
+            grid-template-areas: 
+               "d c b a"  
+               "e g f h"  
+               "i j k l";   
+        }
+        .box{
+            text-align: center;
+            font-size: 2rem;
+            line-height: 2rem;
+            padding: 0.5rem 2rem;
+        }
+        .a{
+            background-color: hsl(0, 30%, 70%);
+            grid-area: a;
+        }
+        .b{
+            background-color: hsl(30, 30%, 70%);
+            grid-area: b;
+        }
+        .c{
+            background-color: hsl(60, 30%, 70%);
+            grid-area: c;
+        }
+        .d{
+            background-color: hsl(90, 30%, 70%);
+            grid-area: d;
+        }
+        .e{
+            background-color: hsl(120, 30%, 70%);
+            grid-area: e;
+        }
+        .f{
+            background-color: hsl(150, 30%, 70%);
+            grid-area: f;
+        }
+        .g{
+            background-color: hsl(180, 30%, 70%);
+            grid-area: g;
+        }
+        .h{
+            background-color: hsl(210, 30%, 70%);
+            grid-area: h;
+        }
+        .i{
+            background-color: hsl(240, 30%, 70%);
+            grid-area: i;
+        }
+        .j{
+            background-color: hsl(270, 30%, 70%);
+            grid-area: j;
+        }
+        .k{
+            background-color: hsl(300, 30%, 70%);
+            grid-area: k;
+        }
+        .l{
+            background-color: hsl(330, 30%, 70%);
+            grid-area: l;
+        }
