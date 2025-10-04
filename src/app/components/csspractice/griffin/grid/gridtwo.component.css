@@ -1,0 +1,24 @@
+     p>span{
+            font-weight: 900;
+        }
+        .intro{
+            grid-area: A;
+        }
+        .sidebar{
+            grid-area: B;
+        }
+        .main{
+            grid-area: C;
+        }
+        .foot{
+            grid-area: D;
+        }
+        main{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-gap: 2rem;
+            grid-template-areas: 
+                "A A"
+                "B C"
+                "D D";
+        }

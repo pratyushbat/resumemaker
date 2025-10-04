@@ -1,0 +1,27 @@
+main {
+    background-color: cornflowerblue;
+    color: cornsilk;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr) 2fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+main>p {
+    color: #333;
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+
+    display: flex;
+    justify-content: center;
+    /* horizontal */
+    align-items: flex-start;
+    /* vertical */
+}
+
+p:nth-of-type(1) {
+    grid-column-start: 1;
+    /*            grid-column: 2 / span 2;*/
+    /*            grid-column-end: 3;*/
+}

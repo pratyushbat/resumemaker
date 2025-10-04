@@ -71,6 +71,12 @@ const routes: Routes = [
      children: [
       { path: '', loadComponent:  ()=>import('./components/csspractice/griffin/cssone.component').then(c=>c.CssOneComponent)},
       { path: 'csstwo', loadComponent:  ()=>import('./components/csspractice/griffin/csstwo/csstwo.component').then(c=>c.CssTwoComponent)},
+      { path: 'css3', loadComponent:  ()=>import('./components/csspractice/griffin/cssthree/cssthree.component').then(c=>c.CssThreeComponent)},
+      { path: 'grid', loadComponent:  ()=>import('./components/csspractice/griffin/grid/grid.component').then(c=>c.GridComponent)},
+      { path: 'flex', loadComponent:  ()=>import('./components/csspractice/griffin/flex/flexcomponenet').then(c=>c.FlexComponent)},
+      { path: 'flextwo', loadComponent:  ()=>import('./components/csspractice/griffin/flex/flextwocomponent').then(c=>c.FlexTwoComponent)},
+      { path: 'target', loadComponent:  ()=>import('./components/csspractice/griffin/target/target.component').then(c=>c.TargetComponent)},
+      { path: 'selector', loadComponent:  ()=>import('./components/csspractice/griffin/selector/selector.component').then(c=>c.SelectorComponent)},
     ],
   },
    {
