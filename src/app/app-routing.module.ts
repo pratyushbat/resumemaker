@@ -80,6 +80,8 @@ const routes: Routes = [
       { path: 'mediaq', loadComponent:  ()=>import('./components/csspractice/griffin/mediaquery.component').then(c=>c.MediaQComponent)},
       { path: 'dropdown', loadComponent:  ()=>import('./components/csspractice/griffin/dropdown/dropdown.comonent').then(c=>c.DropDownComponent)},
       { path: 'flexform', loadComponent:  ()=>import('./components/csspractice/griffin/flex/flexform.component').then(c=>c.FlexFormComponent)},
+      { path: 'clearfloat', loadComponent:  ()=>import('./components/csspractice/griffin/clearfixandfloat/clearfloat.component').then(c=>c.ClearFloatComponent)},
+      { path: 'genlayout', loadComponent:  ()=>import('./components/csspractice/griffin/layout/genericlayout.component').then(c=>c.GenericLayOutComponent)},
     ],
   },
    {
