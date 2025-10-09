@@ -1,0 +1,81 @@
+<form [formGroup]="loginForm">
+    <div class="input-icon-panel">
+        <div class="form-group" [hidden]="usernameType == 'Mobile'">
+            <label>Email </label>
+            <input autocomplete="on"
+                [ngClass]="{'has-error': (loginFrm.email.errors && (loginFrm.email.touched || loginFrm.email.dirty))}"
+                placeholder="your@emailaddress.com" id="email" formControlName="email" type="email"
+                class="form-control ng-dirty ng-valid ng-touched" #email>
+            <div class="login-error"
+                *ngIf="(loginFrm.email.errors && (loginFrm.email.touched && loginFrm.email.invalid))">
+                <div *ngIf="(loginFrm.email.errors.required)">Your username is required</div>
+                <div *ngIf="(loginFrm.email.errors.pattern)">Please enter valid username</div>
+            </div>
+        </div>
+        <div class="form-group" [hidden]="usernameType == 'Email'">
+            <label>Mobile Number</label>
+            <div>
+                <input autocomplete="on"
+                    [ngClass]="{'has-error': (loginFrm?.mobile?.errors && (loginFrm?.mobile?.touched && loginFrm?.mobile?.invalid && (loginFrm?.mobile?.errors?.required)))}"
+                    id="mobile" formControlName="mobile" [placeholder]="placeHolder"  type="text"
+                    class="form-control " maxlength="15" #imobile>
+            </div>
+            <div class="error-change-panel">
+                <div [hidden]="show_countries" class="change_country">
+                    <span (click)="show_countries = true;">({{countryCode}}) change country</span>
+                </div>
+                <div class="login-error"
+                    *ngIf="(loginFrm?.mobile?.errors && (loginFrm?.mobile?.touched && loginFrm?.mobile?.invalid))">
+                    <div *ngIf="(loginFrm?.mobile?.errors?.required)">Your mobile is required</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="" [hidden]="!show_countries || usernameType == 'Email'">
+        <div class="form-group center-piece">
+            <label class="control-label" for="country">Country</label>
+            <div>
+                <select class="custom-select" formControlName="countryId" >
+                    <option *ngFor="let country of countryList" [value]="country.code2"
+                        [attr.data-code2]="country.code2">{{country.name}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="input-icon-panel">
+        <div class="form-group">
+            <label>Password</label>
+            <input autocomplete="on"
+                [ngClass]="{'has-error': loginFrm.password.errors && (loginFrm.password.touched || loginFrm.password.dirty)}"
+                type="password" class="form-control ng-dirty ng-valid ng-touched" placeholder="Enter password" id="pwd"
+                formControlName="password">
+            <a><i class="fa fa-eye show-password" toggle="#pwd"></i></a>
+            <div class="login-error"
+                *ngIf="loginFrm.password.errors && (loginFrm.password.touched || loginFrm.password.dirty)">
+                <div *ngIf="(loginFrm.password.errors.required)">Your password is required</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="submit-btn">
+        <button type="submit" [disabled]="isLogin || logInEnabled()" class="btn btn-primary" id="submit-btn"
+            (click)="login()">Submit</button>
+        <div class="forgot-panel">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="forgot-link">
+                        <button type="button" id="forgot-btn" (click)="forgetPassword()"
+                            [disabled]="btnForgotSpinner">Forgot your Password?</button>
+                        <span *ngIf="btnForgotSpinner">&nbsp;<i class="fa fa-spinner fa-spin"></i></span>
+                        <p>
+                            <b>Don't have an account?</b> <button id="forgot-btn" type="button"
+                                [routerLink]="['/signup']">&nbsp;Sign up</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

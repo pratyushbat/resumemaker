@@ -121,8 +121,10 @@ import { HomepageCssComponent } from './components/csspractice/homepage.componen
 import { InsideBookComponent } from './components/csspractice/book.component';
 import { FormComponent } from './components/csspractice/form.component';
 import { TableComponent } from './components/csspractice/table.component';
+/* import { NgxMaskModule ,IConfig} from 'ngx-mask'; */
 
 
+/* export const options: Partial<IConfig> = null; */
 @NgModule({
   declarations: [
     AppComponent, 
@@ -259,6 +261,8 @@ import { TableComponent } from './components/csspractice/table.component';
       maxAge: 25, // Retains last 25 states
       logOnly: false, // Restrict extension to log-only mode in production
     }),
+/* 
+       NgxMaskModule.forRoot(options) */
   ],
   providers: [ 
 

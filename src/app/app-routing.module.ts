@@ -34,6 +34,7 @@ import { HomepageCssComponent } from './components/csspractice/homepage.componen
 import { InsideBookComponent } from './components/csspractice/book.component';
 import { FormComponent } from './components/csspractice/form.component';
 import { TableComponent } from './components/csspractice/table.component';
+import { LoginRacloopComponent } from './components/csspractice/racloop/loginr.component';
 
 // const routes: Routes = [
 //   {path:'',component:LoginComponent , canActivate: [AnonGuard],},
@@ -49,6 +50,9 @@ import { TableComponent } from './components/csspractice/table.component';
 const routes: Routes = [
    {
     path: 'second', component: SecondaryComponent
+  },
+   {
+    path: 'loginr', component: LoginRacloopComponent
   },
    {
     path: 'flex', component: FlextBoxPracticeComponent

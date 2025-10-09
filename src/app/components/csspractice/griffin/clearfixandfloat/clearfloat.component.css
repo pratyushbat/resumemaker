@@ -1,0 +1,24 @@
+    ul {
+        width: calc((2rem + 300px) * 4);
+        /* allows for 4 columns */
+        margin: 1rem auto;
+        /* center the gallery */
+        border: 1px solid hsl(0, 50%, 50%);
+        background-color: hsla(0, 50%, 80%, 0.2);
+      }
+
+      li {
+        list-style: none;
+        float: left;
+        margin: 1rem;
+      }
+      /* li:last-child {
+        float: none;
+      } */
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      p {
+      }

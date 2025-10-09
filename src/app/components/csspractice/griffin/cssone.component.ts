@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   
     <header>
         <h1> CSS  OnePadding and Margins</h1>
-          <h1>CSS Width vs Max-Width</h1>
+        <!--   <h1>CSS Width vs Max-Width</h1> -->
     </header>
     <main>
     <p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
@@ -56,6 +56,23 @@ import { Component, Input } from '@angular/core';
   `,
   styles: [
     `
+
+    /* to center h1 text */
+    header{
+      border:3px solid crimson;
+      margin:1rem;
+      padding:0;
+      text-align:center;
+    }
+    header h1{
+      font-size:2rem;
+      background-color:lightskyblue;
+      margin:1rem auto;
+      padding:0rem;
+       text-align:center;
+      width:50%;
+    }
+    /* to center h1 text */
       p {
            background-color:cornflowerblue;
            color:cornsilk;
